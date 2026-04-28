@@ -6,7 +6,7 @@ const FriendCard = ({ friend }) => {
 
     return (
         <Link href={`/friend/${friend.id}`} >
-        <div className="cursor-default card bg-base-100 shadow-sm">
+        <div className="cursor-pointer card bg-base-100 shadow-sm">
             <div className="card-body flex flex-col items-center text-center">
                 <div className="avatar">
                     <div className="w-24 rounded-full border-2">

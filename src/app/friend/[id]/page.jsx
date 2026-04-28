@@ -1,5 +1,5 @@
+import FriendActions from "@/components/FriendActions";
 import Image from "next/image";
-import placeHolder from '@/assets/instagram.png';
 
 const FriendDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -14,19 +14,30 @@ const FriendDetailsPage = async ({ params }) => {
                     <div className="card-body flex flex-col items-center text-center">
                         <div className="avatar">
                             <div className="w-24 rounded-full border-2">
-                                <Image src={placeHolder} alt={friendDetails.name} />
+                                <Image
+                                    src={friendDetails.picture}
+                                    alt={friendDetails.name}
+                                    width={200}
+                                    height={200}
+                                />
                             </div>
                         </div>
-                        <h1 className='text-3xl capitalize'>David Kim</h1>
-                        <p>62d ago</p>
-                        <span className="badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none uppercase">
-                            WORK
-                        </span>
+                        <h1 className='text-3xl capitalize'>{friendDetails.name}</h1>
+                        <p>{friendDetails.days_since_contact}d ago</p>
                         <span className="badge badge-lg bg-[#F59E0B] text-base-100 border-none capitalize">
-                            WORK
+                            {friendDetails.status}
                         </span>
-                        <p className="italic">&quot;Former colleague, great mentor&quot;</p>
-                        <p>Preferred: email</p>
+                        <div className='flex items-center gap-2'>
+                            {friendDetails.tags.map((tag, idx) => {
+                                return (
+                                    <span key={idx} className="badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none uppercase">
+                                        {tag}
+                                    </span>
+                                );
+                            })}
+                        </div>
+                        <p className="italic">&quot;{friendDetails.bio}&quot;</p>
+                        <p>{friendDetails.email}</p>
                     </div>
                 </div>
                 <div className="cardActions flex flex-col justify-between">
@@ -45,19 +56,25 @@ const FriendDetailsPage = async ({ params }) => {
                 <div className='friendStats grid grid-cols-4 gap-5'>
                     <div className="card bg-base-100 shadow-sm">
                         <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>62</h1>
+                            <h1 className='text-3xl'>{friendDetails.days_since_contact}</h1>
                             <p>Days Since Contact</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 shadow-sm">
                         <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>30</h1>
+                            <h1 className='text-3xl'>{friendDetails.goal}</h1>
                             <p>Goal (Days)</p>
                         </div>
                     </div>
                     <div className="card bg-base-100 shadow-sm">
                         <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>Feb 27, 2026</h1>
+                            <h1 className='text-3xl'>{
+                                new Date(friendDetails.next_due_date).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                })
+                            }</h1>
                             <p>Next Due</p>
                         </div>
                     </div>
@@ -80,26 +97,7 @@ const FriendDetailsPage = async ({ params }) => {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 shadow-sm">
-                    <div className="card bg-base-100 shadow-sm">
-                        <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>CallICON</h1>
-                            <p>Call</p>
-                        </div>
-                    </div>
-                    <div className="card bg-base-100 shadow-sm">
-                        <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>TextICON</h1>
-                            <p>Text</p>
-                        </div>
-                    </div>
-                    <div className="card bg-base-100 shadow-sm">
-                        <div className="card-body flex flex-col items-center text-center">
-                            <h1 className='text-3xl'>VideoICON</h1>
-                            <p>Video</p>
-                        </div>
-                    </div>
-                </div>
+                <FriendActions id={id} />
             </div>
         </div>
     );
