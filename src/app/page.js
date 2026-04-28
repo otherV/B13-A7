@@ -7,8 +7,6 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Stats />
-      <hr className="border-2 opacity-6"></hr>
       <FriendsList />
     </>
   );

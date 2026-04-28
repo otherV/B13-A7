@@ -1,23 +1,27 @@
 import React from 'react';
 
-const Stats = () => {
+const Stats = ({
+    totalFriends,
+    onTrack,
+    needAttention
+}) => {
     return (
         <section className='grid grid-cols-4 gap-5'>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>10</h1>
+                    <h1 className='text-3xl'>{totalFriends}</h1>
                     <p>Total Friends</p>
                 </div>
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>3</h1>
+                    <h1 className='text-3xl'>{onTrack}</h1>
                     <p>On Track</p>
                 </div>
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>6</h1>
+                    <h1 className='text-3xl'>{needAttention}</h1>
                     <p>Need Attention</p>
                 </div>
             </div>

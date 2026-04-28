@@ -1,7 +1,12 @@
 import Image from "next/image";
 import placeHolder from '@/assets/instagram.png';
 
-const FriendDetailsPage = ({ params }) => {
+const FriendDetailsPage = async ({ params }) => {
+    const { id } = await params;
+    const res = await fetch(`http://localhost:3000/data.json`);
+    const friendsArray = await res.json();
+    const friendDetails = friendsArray.find((friend) => friend.id === Number(id));
+
     return (
         <div className="grid grid-cols-3 gap-3">
             <div className="col-span-1 flex flex-col justify-between">
@@ -9,7 +14,7 @@ const FriendDetailsPage = ({ params }) => {
                     <div className="card-body flex flex-col items-center text-center">
                         <div className="avatar">
                             <div className="w-24 rounded-full border-2">
-                                <Image src={placeHolder} alt={`friend`} />
+                                <Image src={placeHolder} alt={friendDetails.name} />
                             </div>
                         </div>
                         <h1 className='text-3xl capitalize'>David Kim</h1>
