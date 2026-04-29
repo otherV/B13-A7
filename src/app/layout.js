@@ -2,6 +2,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import TimelineProvider from "@/context/TimelineContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
       <body className="bg-[#F8FAFC] min-h-screen flex flex-col">
         <NavBar />
         <div className="flex-1 container mx-auto max-w-7/10">
-          {children}
+          <TimelineProvider>
+            {children}
+          </TimelineProvider>
         </div>
         <Footer />
       </body>

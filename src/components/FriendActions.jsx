@@ -1,8 +1,20 @@
 "use client";
 
-const FriendActions = ({id}) => {
-    const handleClick = (actionType) => {
+import { use } from "react";
+import { TimelineContext } from "@/context/TimelineContext";
 
+const FriendActions = ({ name }) => {
+    const { setTimelineList } = use(TimelineContext)
+
+    const handleClick = (actionType) => {
+        setTimelineList((a) => [...a,
+        {
+            "id": a.length,
+            "name": name,
+            "type": actionType,
+            "date": new Date().toISOString().split('T')[0],
+        }
+        ]);
     }
 
     return (

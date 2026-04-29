@@ -1,21 +1,29 @@
+"use client";
+
+import { use, useState } from "react";
+import { TimelineContext } from "@/context/TimelineContext";
 import TimelineCard from "@/components/TimelineCard";
 
 const TimelinePage = () => {
+    const { timelineList } = use(TimelineContext);
+    const [actType, setActType] = useState("any");
+    console.log(actType);
+
     return (
         <div>
             <h1 className="text-4xl">Timeline</h1>
-            <div className="dropdown dropdown-start">
-                <div tabIndex={0} role="button" className="btn m-1">Filter timeline</div>
-                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </ul>
-            </div>
+            <select defaultValue="Filter Timeline" className="select">
+                <option disabled={true}>Filter Timeline</option>
+                <option onClick={ () => setActType("any") }>Any</option>
+                <option onClick={ () => setActType("call") }>Call</option>
+                <option onClick={ () => setActType("text") }>Text</option>
+                <option onClick={ () => setActType("video") }>Video</option>
+            </select>
 
             {
-                [].map((timeline, index)=>{
-                    return(
-                        <TimelineCard key={index} />
+                timelineList.filter((a) => a.type === (actType === "any" ? ("call" || "text" || "video") : actType)).map((timeline, index) => {
+                    return (
+                        <TimelineCard key={index} timeline={timeline} />
                     )
                 })
             }

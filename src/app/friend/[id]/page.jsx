@@ -1,5 +1,6 @@
 import FriendActions from "@/components/FriendActions";
 import Image from "next/image";
+import dateFormat from "@/utils/dateFormat";
 
 const FriendDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -69,11 +70,7 @@ const FriendDetailsPage = async ({ params }) => {
                     <div className="card bg-base-100 shadow-sm">
                         <div className="card-body flex flex-col items-center text-center">
                             <h1 className='text-3xl'>{
-                                new Date(friendDetails.next_due_date).toLocaleDateString("en-US", {
-                                    month: "short",
-                                    day: "numeric",
-                                    year: "numeric",
-                                })
+                                dateFormat(friendDetails.next_due_date)
                             }</h1>
                             <p>Next Due</p>
                         </div>
@@ -97,7 +94,7 @@ const FriendDetailsPage = async ({ params }) => {
                     </div>
                 </div>
 
-                <FriendActions id={id} />
+                <FriendActions name={friendDetails.name} />
             </div>
         </div>
     );

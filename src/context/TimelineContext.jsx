@@ -1,10 +1,17 @@
+"use client";
 
-const TimelineContext = () => {
+import { createContext, useState } from "react";
+
+export const TimelineContext = createContext()
+
+const TimelineProvider = ({ children }) => {
+    const [timelineList, setTimelineList] = useState([]);
+    const data = { timelineList, setTimelineList }
     return (
-        <div>
-            
-        </div>
+        <TimelineContext value={data}>
+            {children}
+        </TimelineContext>
     );
 };
 
-export default TimelineContext;
+export default TimelineProvider;
