@@ -2,6 +2,7 @@
 
 import { use } from "react";
 import { TimelineContext } from "@/context/TimelineContext";
+import { toast } from "react-toastify";
 
 const FriendActions = ({ name }) => {
     const { setTimelineList } = use(TimelineContext)
@@ -15,6 +16,7 @@ const FriendActions = ({ name }) => {
             "date": new Date().toISOString().split('T')[0],
         }
         ]);
+        toast.success(`${actionType} with ${name}`);
     }
 
     return (

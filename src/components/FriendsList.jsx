@@ -1,4 +1,4 @@
-import React from 'react';
+
 import FriendCard from './FriendCard';
 import Stats from './Stats';
 

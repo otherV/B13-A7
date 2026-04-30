@@ -7,7 +7,6 @@ import TimelineCard from "@/components/TimelineCard";
 const TimelinePage = () => {
     const { timelineList } = use(TimelineContext);
     const [actType, setActType] = useState("any");
-    console.log(actType);
 
     return (
         <div>
@@ -21,7 +20,7 @@ const TimelinePage = () => {
             </select>
 
             {
-                timelineList.filter((a) => a.type === (actType === "any" ? ("call" || "text" || "video") : actType)).map((timeline, index) => {
+                (actType === "any" ? timelineList : timelineList.filter((a) => a.type === actType)).map((timeline, index) => {
                     return (
                         <TimelineCard key={index} timeline={timeline} />
                     )

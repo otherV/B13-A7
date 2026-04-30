@@ -1,10 +1,14 @@
-import React from 'react';
+"use client";
+
+import { use } from "react";
+import { TimelineContext } from "@/context/TimelineContext";
 
 const Stats = ({
     totalFriends,
     onTrack,
     needAttention
 }) => {
+    const { timelineList } = use(TimelineContext);
     return (
         <section className='grid grid-cols-4 gap-5'>
             <div className="card bg-base-100 shadow-sm">
@@ -27,7 +31,7 @@ const Stats = ({
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>12</h1>
+                    <h1 className='text-3xl'>{timelineList.length}</h1>
                     <p>Interactions This Month</p>
                 </div>
             </div>
