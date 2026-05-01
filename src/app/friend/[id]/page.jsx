@@ -4,13 +4,15 @@ import dateFormat from "@/utils/dateFormat";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FiArchive } from "react-icons/fi";
 import { PiBellSimpleZBold } from "react-icons/pi";
+import { notFound } from "next/navigation";
 
 const FriendDetailsPage = async ({ params }) => {
     const { id } = await params;
     const res = await fetch(`http://localhost:3000/data.json`);
     const friendsArray = await res.json();
     const friendDetails = friendsArray.find((friend) => friend.id === Number(id));
-
+    if (!friendDetails) notFound();
+    
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="col-span-1 flex flex-col justify-between">
