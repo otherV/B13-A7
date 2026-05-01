@@ -1,3 +1,4 @@
+"use client"
 
 import { Legend, Pie, PieChart, Label } from 'recharts';
 

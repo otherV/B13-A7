@@ -10,7 +10,6 @@ import { LuClock3 } from "react-icons/lu";
 
 const NavBar = () => {
     const pathName = usePathname();
-    console.log("pathName: ", pathName)
     return (
         <div className="navbar bg-base-100 shadow-sm px-20">
             <div className="flex-1">

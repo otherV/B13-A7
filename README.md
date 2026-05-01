@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KeenKeeper 🤝
 
-## Getting Started
+> Stay intentional about the people who matter most.
 
-First, run the development server:
+KeenKeeper is a personal engagement manager that helps you nurture relationships with friends, family, colleagues, and acquaintances — so no one important slips through the cracks.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Friend List View** — Browse all your contacts at a glance with status indicators showing who's overdue, almost due, or on track for a catch-up
+- **Friend Details & Engagement Actions** — View detailed profiles and log interactions like calls, texts, and video chats to keep your engagement history up to date
+- **Timeline with Filter** — A chronological log of all your interactions, filterable by type (call, text, video) to quickly find what you're looking for
+- **Analytics Dashboard** — Visual pie chart breakdowns comparing your call, text, and video engagement so you can see how you're connecting with the people in your life
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+| Technology | Purpose |
+|---|---|
+| [Next.js 16](https://nextjs.org/) | React framework with App Router |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling |
+| [DaisyUI v5](https://daisyui.com/) | Tailwind component library |
+| [Recharts](https://recharts.org/) | Chart and data visualization |
+| [React Toastify](https://fkhadra.github.io/react-toastify/) | Toast notifications |
+| [React Icons](https://react-icons.github.io/react-icons/) | Icon library |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
