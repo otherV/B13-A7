@@ -1,2 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.green-text{
+    color: #244D3F;
+}
+
+.grey-text{
+    color: #64748B;
+}
+
+.dark-text{
+    color: #1F2937;
+}
+
+.green-bg{
+    background: #244D3F;
+}

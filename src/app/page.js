@@ -3,9 +3,11 @@ import FriendsList from "@/components/FriendsList";
 
 export default function Home() {
   return (
+
     <>
       <Banner />
       <FriendsList />
     </>
+
   );
 }

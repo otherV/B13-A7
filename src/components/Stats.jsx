@@ -10,29 +10,29 @@ const Stats = ({
 }) => {
     const { timelineList } = use(TimelineContext);
     return (
-        <section className='grid grid-cols-4 gap-5'>
+        <section className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>{totalFriends}</h1>
-                    <p>Total Friends</p>
+                    <h1 className='green-text font-semibold text-3xl'>{totalFriends}</h1>
+                    <p className="grey-text text-md">Total Friends</p>
                 </div>
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>{onTrack}</h1>
-                    <p>On Track</p>
+                    <h1 className='green-text font-semibold text-3xl'>{onTrack}</h1>
+                    <p className="grey-text text-md">On Track</p>
                 </div>
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>{needAttention}</h1>
-                    <p>Need Attention</p>
+                    <h1 className='green-text font-semibold text-3xl'>{needAttention}</h1>
+                    <p className="grey-text text-md">Need Attention</p>
                 </div>
             </div>
             <div className="card bg-base-100 shadow-sm">
                 <div className="card-body flex flex-col items-center text-center">
-                    <h1 className='text-3xl'>{timelineList.length}</h1>
-                    <p>Interactions This Month</p>
+                    <h1 className='green-text font-semibold text-3xl'>{timelineList.length}</h1>
+                    <p className="grey-text text-md">Interactions This Month</p>
                 </div>
             </div>
         </section>

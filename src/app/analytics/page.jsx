@@ -24,18 +24,18 @@ const AnalyticsPage = () => {
 
     return (
         <div>
-            <h1 className="text-4xl">
+            <h1 className="dark-text font-bold text-5xl mb-6">
                 Friendship Analytics
             </h1>
-            <div className="card bg-base-100 shadow-sm">
+            <div className="card bg-base-100 shadow-sm p-8">
                 <div className="card-body">
                     <div className="card-actions justify-start">
-                        <h1 className="text-xl">
+                        <h1 className="green-text font-medium text-xl">
                             By Interaction Type
                         </h1>
                     </div>
-                    <div className="w-full flex flex-row justify-center">
-                        <div className="w-1/3">
+                    <div className="w-full flex flex-row justify-center my-6">
+                        <div className="w-full xs:w-6/10 sm:w-1/2 lg:w-1/3">
                         <Chart data={data} />
                         </div>
                     </div>

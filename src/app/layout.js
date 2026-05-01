@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-[#F8FAFC] min-h-screen flex flex-col">
         <NavBar />
-        <div className="flex-1 container mx-auto max-w-7/10">
+        <div className="flex-1 container mx-auto max-w-7/10 my-20">
           <TimelineProvider>
             {children}
           </TimelineProvider>

@@ -17,9 +17,9 @@ const FriendsList = async () => {
                 onTrack={on_track}
                 needAttention={overdue}
             />
-            <hr className="border-2 opacity-6"></hr>
-            <h3 className='text-2xl'>Your Friends</h3>
-            <div className='grid grid-cols-4 gap-5'>
+            <hr className="border-2 opacity-6 my-10"></hr>
+            <h3 className='dark-text font-semibold text-2xl'>Your Friends</h3>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch mt-4'>
                 {
                     friendsArray.map((friend, index) => {
                         return (
