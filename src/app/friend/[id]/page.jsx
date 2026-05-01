@@ -29,13 +29,13 @@ const FriendDetailsPage = async ({ params }) => {
                             </div>
                         </div>
                         <h1 className='dark-text font-semibold text-xl capitalize mt-3'>{friendDetails.name}</h1>
-                        <span className={`badge badge-lg ${friendDetails.status === `almost_due` ? `bg-[#F59E0B]` : (friendDetails.status === `on_track` ? `bg-[#244D3F]` : `bg-[#EF4444]`)} text-base-100 border-none capitalize font-medium my-2`}>
+                        <span className={`whitespace-nowrap badge badge-lg ${friendDetails.status === `almost_due` ? `bg-[#F59E0B]` : (friendDetails.status === `on_track` ? `bg-[#244D3F]` : `bg-[#EF4444]`)} text-base-100 border-none capitalize font-medium my-2`}>
                             {friendDetails.status === "on_track" ? friendDetails.status.split("_").join("-") : friendDetails.status.split("_").join(" ")}
                         </span>
                         <div className='flex items-center gap-2'>
                             {friendDetails.tags.map((tag, idx) => {
                                 return (
-                                    <span key={idx} className="badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none font-medium uppercase">
+                                    <span key={idx} className="whitespace-nowrap badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none font-medium uppercase">
                                         {tag}
                                     </span>
                                 );

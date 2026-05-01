@@ -22,13 +22,13 @@ const FriendCard = ({ friend }) => {
                 <div className='flex items-center gap-2 mt-2'>
                     {friend.tags.map((tag, idx) => {
                         return(
-                            <span key={idx} className="badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none font-medium uppercase">
+                            <span key={idx} className="whitespace-nowrap badge badge-lg bg-[#D1FAE5] text-[#065F46] border-none font-medium uppercase">
                             {tag}
                         </span>
                         );
                     })}
                 </div>
-                <span className={`badge badge-lg ${friend.status === `almost_due` ? `bg-[#F59E0B]` : (friend.status === `on_track` ? `bg-[#244D3F]` : `bg-[#EF4444]`)} text-base-100 border-none capitalize mt-2 font-medium`}>
+                <span className={`whitespace-nowrap badge badge-lg ${friend.status === `almost_due` ? `bg-[#F59E0B]` : (friend.status === `on_track` ? `bg-[#244D3F]` : `bg-[#EF4444]`)} text-base-100 border-none capitalize mt-2 font-medium`}>
                     {friend.status === "on_track" ? friend.status.split("_").join("-") : friend.status.split("_").join(" ")}
                 </span>
             </div>
